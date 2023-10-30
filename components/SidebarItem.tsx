@@ -30,7 +30,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({icon: Icon, label, active, hre
             py-1
         `, active && "text-white")}
     >
-        Sidebar items
+        <Icon size={26}/>
     </Link>
   )
 }
