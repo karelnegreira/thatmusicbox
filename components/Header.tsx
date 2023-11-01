@@ -44,12 +44,12 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
         <div className="flex justify-between items-center gap-x-4">
             <>
                 <div>
-                    <CustomButton className="bg-transparent text-neutral-300 font-medium">
+                    <CustomButton onClick={() => {}} className="bg-transparent text-neutral-300 font-medium">
                         Sign up
                     </CustomButton>
                 </div>
                 <div>
-                    <CustomButton className="bg-white px-6 py-2">
+                    <CustomButton onClick={() => {}} className="bg-white px-6 py-2">
                         Log in
                     </CustomButton>
                 </div>
