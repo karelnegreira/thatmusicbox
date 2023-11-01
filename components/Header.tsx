@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import CustomButton from "./CustomButton";
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -40,7 +41,15 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
                     <BiSearch size={35} className="text-black"/>
                 </button>
             </div>
-
+        <div className="flex justify-between items-center gap-x-4">
+            <>
+                <div>
+                    <CustomButton>
+                        SIgn up
+                    </CustomButton>
+                </div>
+            </>
+        </div>
         </div>
     </div>
   )
