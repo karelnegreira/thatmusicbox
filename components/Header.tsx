@@ -44,8 +44,13 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
         <div className="flex justify-between items-center gap-x-4">
             <>
                 <div>
-                    <CustomButton>
-                        SIgn up
+                    <CustomButton className="bg-transparent text-neutral-300 font-medium">
+                        Sign up
+                    </CustomButton>
+                </div>
+                <div>
+                    <CustomButton className="bg-white px-6 py-2">
+                        Log in
                     </CustomButton>
                 </div>
             </>
