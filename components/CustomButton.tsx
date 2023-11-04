@@ -20,7 +20,7 @@ const CustomButton = forwardRef<HTMLButtonElement, CustomButtonProps>(({
             >
             {children}
         </button>
-    )
+    );
 })
 
 export default CustomButton
