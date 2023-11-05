@@ -11,10 +11,24 @@ export default function Home() {
                 Welcome back
               </h1>
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4">
-                <ListItems />
+                <ListItems 
+                  image="/images/liked.png"
+                  name="Liked Songs"
+                  href="Liked"
+                />
               </div>
           </div>
         </Header>
+        <div className="mt-2 mb-7 px-6">
+            <div className="flex justify-between items-center">
+                <h1 className="text-white text-2xl font-semibold">
+                  Newest songs
+                </h1>
+            </div>
+            <div>
+              Your audio list
+            </div>
+        </div>
     </div>
   )
 }
