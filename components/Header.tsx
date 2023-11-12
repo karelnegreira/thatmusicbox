@@ -11,6 +11,7 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import CustomButton from "./CustomButton";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
+import { FaUserAlt } from "react-icons/fa";
 
 
 interface HeaderProps {
@@ -62,8 +63,11 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
         <div className="flex justify-between items-center gap-x-4">
             {user ? (
                 <div className="flex gap-x-4 items-center">
-                <CustomButton onClick={handleLogout}>
+                <CustomButton className="bg-white px-6 py-2" onClick={handleLogout} >
                     Logout
+                </CustomButton>
+                <CustomButton className="bg-white" onClick={() => router.push('/account')}>
+                    <FaUserAlt />
                 </CustomButton>
                 </div>) : (
             <>
