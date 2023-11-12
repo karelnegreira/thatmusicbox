@@ -3,9 +3,18 @@
 import { TbAirBalloon, TbPlaylist } from 'react-icons/tb';
 import {AiOutlinePlus} from 'react-icons/ai';
 
+import useAuthModal from '@/hooks/useAuthModal';
+import { useUser } from '@/hooks/useUser';
+
 const Library = () => {
+    const authModal = useAuthModal();
+    const { user } = useUser();
+
     const onClick = () => {
-        //handle uploading file song later
+        if (!user) {
+            return authModal.onOpen();
+        }
+        //handles updload later
     };
   return (
     <div className="flex flex-col">
@@ -16,7 +25,7 @@ const Library = () => {
                     Your library
                 </p>
             </div>
-            <AiOutlinePlus size={20} className="text-neutral-400 cursor-pointer hover:text-white transition" />
+            <AiOutlinePlus onClick={onClick} size={20} className="text-neutral-400 cursor-pointer hover:text-white transition" />
         </div>
         <div className="flex flex-col gap-y-2 mt-4 px-3">
             Your list of songs
