@@ -5,8 +5,13 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+
+
 import CustomButton from "./CustomButton";
 import useAuthModal from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+
 
 interface HeaderProps {
     children: React.ReactNode;
@@ -18,9 +23,19 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
     const authModal = useAuthModal();
     
     const router = useRouter();
+
+    const supabaseClient = useSupabaseClient();
+
+    const { user } = useUser();
     
-    const handleLogout = () => {
-        //to implement later
+    const handleLogout = async () => {
+        const { error } =  await supabaseClient.auth.signOut();
+        //TODO: reset all playing songs
+        router.refresh();
+
+        if (error) {
+            console.log(error);
+        }
     }
 
   return (
@@ -45,6 +60,12 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
                 </button>
             </div>
         <div className="flex justify-between items-center gap-x-4">
+            {user ? (
+                <div className="flex gap-x-4 items-center">
+                <CustomButton onClick={handleLogout}>
+                    Logout
+                </CustomButton>
+                </div>) : (
             <>
                 <div>
                     <CustomButton onClick={authModal.onOpen} className="bg-transparent text-neutral-300 font-medium">
@@ -57,6 +78,7 @@ const Header: React.FC<HeaderProps> = ({children, className}) => {
                     </CustomButton>
                 </div>
             </>
+            )}
         </div>
         </div>
         {children}
