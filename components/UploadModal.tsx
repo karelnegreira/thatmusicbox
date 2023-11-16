@@ -9,7 +9,7 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import useUploadModal from "@/hooks/useUploadModal";
 import Modal from "./Modal"
 import Input from "./Input";
-import CustomButton from "./CustomButton";
+import CustomButton from "./Button";
 import { useUser } from "@/hooks/useUser";
 import { useRouter } from "next/navigation";
 

@@ -1,11 +1,11 @@
 import { forwardRef } from "react"
 import { twMerge } from "tailwind-merge"
 
-interface CustomButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 }
 
-const CustomButton = forwardRef<HTMLButtonElement, CustomButtonProps>(({
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     className, 
     children, 
     disabled, 
@@ -23,4 +23,4 @@ const CustomButton = forwardRef<HTMLButtonElement, CustomButtonProps>(({
     );
 })
 
-export default CustomButton
+export default Button
