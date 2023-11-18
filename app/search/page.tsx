@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import SearchInput from "@/components/SearchInput";
 import getSongsByTitle from "@/functions/getSongsByTitle";
+import SearchContent from "./component/SearchContent";
 
 interface SearchProps {
     searchParams: {
@@ -20,6 +21,7 @@ const Search = async ({searchParams}: SearchProps) => {
                     </h1>
                 </div>
             </Header>
+            <SearchContent songs={songs}/>
         </div>
     )
 }
