@@ -32,6 +32,9 @@ const MediaItem: React.FC<MediaItemProps> = ({data, onClick}) => {
             <p className="text-white truncate">
                 {data.title}
             </p>
+            <p className="text-neutral-400 text-sm truncate">
+                {data.author}
+            </p>
         </div>
     </div>
   )
