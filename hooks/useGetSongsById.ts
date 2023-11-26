@@ -1,9 +1,8 @@
 import { useSessionContext } from "@supabase/auth-helpers-react";
-
 import { useEffect, useMemo, useState } from "react";
-import {Song} from '@/types';
 import toast from "react-hot-toast";
 
+import {Song} from '@/types';
 
 const useGetSongsById = (id?: string) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -32,10 +31,10 @@ const useGetSongsById = (id?: string) => {
 
     }, [id, supabaseClient])
 
-    useMemo(() => ({
+    return useMemo(() => ({
         isLoading, 
         song
-    }), [isLoading, song])
+    }), [isLoading, song]);
 };
 
 export default useGetSongsById;
