@@ -1,23 +1,26 @@
 "use client";
 
-import useGetSongsById from "@/hooks/useGetSongsById";
+import useGetSongById from "@/hooks/useGetSongById";
 import useLoadSongUrl from "@/hooks/useLoadSongUrl";
 import usePlayer from "@/hooks/usePlayer";
 
 const Player = () => {
 
     const player = usePlayer();
-    const { song } = useGetSongsById(player.activeId);
+    const { song } = useGetSongById(player.activeId);
     const songUrl = useLoadSongUrl(song!);
+
+    
     
     if (!song || !songUrl || !player.activeId) {
+        console.log("something is missing here...")
         return null;
     }
 
 
   return (
     <div className="fixed bottom-0 bg-black w-full py-2 h-[80px] px-4">
-        <PlayContent key={songUrl} song={song} songUrl={songUrl} />
+        Play a song!
     </div>
   )
 }
