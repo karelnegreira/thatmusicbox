@@ -30,7 +30,7 @@ const SongItem: React.FC<SongItemProps> = ({data, onClick}) => {
                     cursor-pointer
                     hover:bg-neutral-400/10 
                     transition p-3"
-                      >
+                  >
         <div className="relative 
                         aspect-square 
                         w-full 
