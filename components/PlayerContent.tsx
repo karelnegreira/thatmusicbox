@@ -1,11 +1,10 @@
 "use client";
 
+import useSound from 'use-sound';
 import { useEffect, useState } from "react";
 import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import {BsPauseFill, BsPlayFill} from "react-icons/bs";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
-import useSound from "use-sound";
-
 
 import { Song } from "@/types";
 import MediaItem from "./MediaItem";
