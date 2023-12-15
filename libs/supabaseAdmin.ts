@@ -138,10 +138,10 @@ const manageSubscriptionStatusChange = async (
         id: subscription.id, 
         user_id: uuid, 
         metadata: subscription.metadata, 
-        //@ts-ignore
+        // @ts-ignore
         status: subscription.status, 
         price_id: subscription.items.data[0].price.id, 
-        //@ts-ignore
+        // @ts-ignore
         quantity: subscription.quantity, 
         cancel_at_period_end: subscription.cancel_at_period_end, 
         cancel_at: subscription.cancel_at ? toDateTime(subscription.cancel_at).toISOString() : null,
